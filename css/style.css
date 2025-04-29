@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* глобальные переменные */
+:root {
+	--color-black: #100F14; /* G900 */
+	--color-grey: #49475A; /* G600 */
+	--color-light-grey: #9794AA; /* G400 */
+	--color-dark-grey: #313039; /* G700 */
+	--color-input-stroke: #CBCAD7; /* G300 */
+}
+
+*, *::after, *::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	overflow: hidden;
+}
+
+
+.container {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+}
+
+.content-box {
+	margin: 107px 78px 80px 100px;
+}
+
+.img {
+	background-size: cover;
+	background-image: url(../img/sebastian-svenson-d2w-_1LJioQ-unsplash\ 1.png);
+	min-height: 100vh;
+}
+
+.img::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#CBCAD7 0%, #7A5AF876 100%);
+	opacity: 0.17;
+}
+
+li {
+	list-style: none;
+}
+
+
+/* шапка */
+.header__title {
+	font-size: clamp(2rem, 1.8571rem + 0.7143vw, 2.5rem);
+	font-weight: 600;
+	color: var(--color-black);
+}
+
+.header__descr {
+	font-size: 1rem;
+	font-weight: 400;
+	color: var(--color-grey);
+	margin-top: 2px;
+}
+
+
+/* форма */
+.form {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.input-name {
+	font-size: 1rem;
+	color: var(--color-dark-grey);
+}
+
+.input-name, .password-header {
+	margin: 32px 0 6px 0;
+}
+
+.password-header .input-name {
+	margin: 0;
+}
+
+.form__input {
+	width: 100%;
+	height: 56px;
+	border: 1px solid var(--color-input-stroke);
+	border-radius: 10px;
+	padding-left: 1rem;
+	font-size: 1rem;
+}
+
+.password-header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	color: #000;
+}
+
+.password-header__hide {
+	display: flex;
+	gap: 5px;
+	margin-right: 9px;
+	color: var(--color-light-grey);
+	font-size: 18px;
+}
+
+.password-descr__text {
+	display: none;
+}
+
+.form__password-descr ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 2rem;
+	font-size: 14px;
+	margin-top: 10px;
+	color: var(--color-light-grey);
+}
+
+.password-descr__container .password-descr__item:last-child {
+	margin-top: 10px;
+}
+
+.password-descr__item {
+	position: relative;
+	margin-left: 15px;
+}
+
+.custom-circle {
+	display: block;
+	position: absolute;
+	top: 6px;
+	left: -15px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--color-light-grey);
+}
+
+/* чекбокс */
+.form__checkbox-container {
+	position: relative;
+	margin: 32px 0 32px 28px;
+}
+
+.checkbox {
+	display: none;
+	left: -28px;
+}
+
+.custom-checkbox {
+	font-size: clamp(0.813rem, 0.7596rem + 0.2671vw, 1rem);
+	color: var(--color-grey);
+}
+
+.custom-checkbox span {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 3px;
+	left: -28px;
+	border: 2px solid var(--color-black);
+	border-radius: 1px;
+	cursor: pointer;
+}
+
+.checkbox:checked+span {
+	background-image: url(../img/check.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.form__container {
+	width: 100%;
+}
+
+.form__button {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	color: #fff;
+	font-size: clamp(1.125rem, 1.0893rem + 0.1786vw, 1.25rem);
+	background: #CCC2D0;
+	margin-bottom: 10px;
+	padding: 1.1rem 2.5rem;
+	border-radius: 50px;
+	animation: pulsation 3s linear infinite;
+	transition: all 0.5s;
+}
+
+.form__button:hover {
+	background: #bdb4c1;
+	animation: none;
+}
+
+.form__button:focus {
+	box-shadow: 0px 0px 0px 1px var(--color-black);
+}
+
+/* анимация кнопки */
+@keyframes pulsation {
+	from {
+		background: #CCC2D0;
+	}
+
+	50% {
+		background: #ada4b0;
+	}
+
+	to {
+		background: #CCC2D0;
+	}
+}
+
+.form__question {
+	color: #686677;
+}
+
+.question__link {
+	font-weight: 600;
+	color: var(--color-black);
+}
+
+
+@media (max-width: 479px) {
+
+	body {
+		overflow-y: scroll;
+	}
+
+	.container {
+		grid-template-columns: 1fr;
+	}
+
+	.content-box {
+		margin: 60px 20px 0px 20px;
+	}
+
+	.password-header__hide {
+		display: none;
+	}
+
+	.form__password-descr {
+		margin-top: 8px;
+	}
+
+	.form__password-descr ul {
+		display: none;
+	}
+
+	.password-descr__text {
+		display: inline;
+		font-size: 14px;
+		color: var(--color-light-grey);
+		font-size: 14px;
+	}
+
+	.form__button {
+		width: 100%;
+	}
+
+	.form__question {
+		width: 100%;
+		text-align: center;
+	}
+
+	.img {
+		display: none;
+	}
+}
