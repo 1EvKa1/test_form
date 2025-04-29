@@ -94,6 +94,11 @@ li {
 	border-radius: 10px;
 	padding-left: 1rem;
 	font-size: 1rem;
+	transition: all 0.5s;
+}
+
+.form__input:focus {
+	border: 1px solid #868397;
 }
 
 .password-header {
@@ -227,6 +232,9 @@ li {
 	color: var(--color-black);
 }
 
+.question__link:hover {
+	box-shadow: 0 0 3px 0 #100F1450;
+}
 
 @media (max-width: 479px) {
 
